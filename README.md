@@ -1,46 +1,48 @@
-# Micael Freitas — Cybersecurity Portfolio
+# Micael Freitas | Cybersecurity Portfolio
 
-A responsive, dark cybersecurity-inspired portfolio built with HTML, CSS, and vanilla JavaScript. Designed for GitHub Pages.
+Welcome to my personal portfolio!
 
-## File structure
+I'm Micael Freitas, an IT student passionate about technology, networking, Linux, and cybersecurity. I'm constantly developing my technical skills, exploring new technologies, and gaining practical experience through projects and hands-on labs.
 
-```text
-FreMi185.github.io/
-├── index.html
-├── README.md
-├── css/
-│   └── style.css
-├── js/
-│   └── main.js
-└── assets/
-    ├── favicon.svg
-    └── profile.jpg   # add your own photo here (optional)
-```
+## About Me
 
-## Publish on GitHub Pages
+I'm interested in understanding how computer systems and networks work, how applications are built, and how digital systems can be protected against security threats.
 
-1. Open your `FreMi185.github.io` repository.
-2. Add `index.html` at the repository root.
-3. Create `css` and `js` folders and upload their files into the matching folders.
-4. Create `assets` and upload `favicon.svg` plus your own portrait named `profile.jpg` (optional).
-5. Commit the changes to the `main` branch.
-6. In Settings → Pages, select Deploy from a branch, `main`, and `/(root)`.
-7. Visit `https://fremi185.github.io/`.
+My goal is to continue improving my knowledge, gain practical experience, and develop the skills needed for a future career in cybersecurity.
 
-## Personalise it
+## Technical Skills
 
-- Change your introduction and skills in `index.html`.
-- Add a project only when you have actually completed it. Link to its repository and explain what you built, what you learned, and what you would improve.
-- To use a PNG portrait instead, change `src="assets/profile.jpg"` to `src="assets/profile.png"`.
-- Change colours, spacing, fonts, and responsive layout in `css/style.css`.
-- Edit the mobile navigation and scroll reveal behavior in `js/main.js`.
+- **Operating Systems:** Linux, Windows
+- **Networking:** TCP/IP, IP addressing, DNS, ports, and firewalls
+- **Cybersecurity:** Security fundamentals, system hardening, access control, and network security
+- **Programming & Web Development:** HTML, CSS, JavaScript, PHP, and SQL
+- **Tools & Technologies:** Git, GitHub, Docker, VirtualBox, and Wireshark
 
-## Security and privacy notes
+*My skills are continuously developing as I gain more practical experience.*
 
-- This is a static portfolio; it does not have a login, database, backend, or contact form. Never add passwords, API keys, tokens, or private information to the repository.
-- Only publish information and screenshots you are comfortable making public.
-- External links use `rel="noopener noreferrer"` when opened in a new tab.
-- The JavaScript uses browser APIs locally and sends no form data or personal data to a server.
-- Keep project claims accurate. Practice security testing only on systems you own or have explicit permission to test.
-- The Google Fonts import loads fonts from Google. If you prefer not to contact that third party, remove the `@import` line from the CSS and the page will use system fonts.
-- GitHub Pages provides static hosting over HTTPS, but this site does not make your device or other systems “secure” by itself.
+## Projects
+
+Here you can find selected projects and practical work that demonstrate my technical knowledge and learning progress.
+
+- **Web Development:** Websites and web applications built with web technologies.
+- **Linux & System Administration:** Practical work with Linux commands, permissions, services, and system configuration.
+- **Networking & Cybersecurity:** Labs and exercises exploring network communication, security concepts, and defensive techniques.
+
+More projects and documentation will be added as I continue learning and building.
+
+## My Goals
+
+- Strengthen my knowledge of cybersecurity and network security.
+- Improve my Linux and system administration skills.
+- Develop secure and reliable web applications.
+- Gain hands-on experience with security tools and technologies.
+- Build practical projects and document what I learn.
+
+## Find Me Online
+
+- **GitHub:** [FreMi185](https://github.com/FreMi185)
+- **LinkedIn:** [Micael Freitas](https://www.linkedin.com/in/micael-freitas-517a07256/)
+
+---
+
+*Always learning. Always building. Always improving.*
