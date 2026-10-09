@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freitas Micael | Cybersecurity</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080d0b;
+            color: #e5e7eb;
+            line-height: 1.7;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #101713;
+            border-bottom: 1px solid #263b2e;
+        }
+
+        nav h2, .green {
+            color: #39ff88;
+        }
+
+        nav a {
+            color: #d1d5db;
+            text-decoration: none;
+            margin-left: 18px;
+        }
+
+        nav a:hover {
+            color: #39ff88;
+        }
+
+        section {
+            padding: 75px 10%;
+        }
+
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .label {
+            color: #39ff88;
+            letter-spacing: 3px;
+            font-size: 13px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.2;
+            margin: 20px 0;
+        }
+
+        h2 {
+            margin-bottom: 22px;
+        }
+
+        .description {
+            max-width: 650px;
+            color: #aab6ad;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 22px;
+            color: #080d0b;
+            background: #39ff88;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background: #a2ffc5;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            padding: 24px;
+            background: #101713;
+            border: 1px solid #263b2e;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            color: #39ff88;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #aab6ad;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            margin: 5px 3px 0 0;
+            background: #1a2920;
+            color: #a2ffc5;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        a {
+            color: #39ff88;
+        }
+
+        footer {
+            padding: 25px;
+            text-align: center;
+            color: #829187;
+            border-top: 1px solid #263b2e;
+        }
+
+        @media (max-width: 650px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>FreMi185<span class="green">.</span></h2>
+        <div>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <p class="label">CYBERSECURITY PORTFOLIO</p>
+
+        <h1>Freitas Micael<br>
+            <span class="green">Future Cybersecurity Specialist.</span>
+        </h1>
+
+        <p class="description">
+            IT student in Luxembourg with an interest in
+            cybersecurity, Linux systems, networking and
+            ethical security testing. I am building my skills
+            through practical exercises and personal projects.
+        </p>
+
+        <a class="button" href="#projects">
+            Explore My Projects →
+        </a>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p class="description">
+            I am an IT student at Lycée des Arts et Métiers
+            in Luxembourg. I enjoy learning how computer
+            systems and networks work, understanding security
+            risks, and finding ways to protect systems.
+            My goal is to develop practical cybersecurity
+            skills and continue my education in this field.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Linux & Systems</h3>
+                <span class="tag">Linux CLI</span>
+                <span class="tag">Bash</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Apache</span>
+            </div>
+
+            <div class="card">
+                <h3>Networking</h3>
+                <span class="tag">TCP/IP</span>
+                <span class="tag">DNS</span>
+                <span class="tag">Firewalls</span>
+                <span class="tag">Wireshark</span>
+            </div>
+
+            <div class="card">
+                <h3>Programming</h3>
+                <span class="tag">Python</span>
+                <span class="tag">PHP</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">SQL</span>
+            </div>
+
+            <div class="card">
+                <h3>Security</h3>
+                <span class="tag">Security Fundamentals</span>
+                <span class="tag">Access Control</span>
+                <span class="tag">Network Security</span>
+                <span class="tag">Ethical Testing</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+
+        <div class="grid">
+            <div class="card">
+                <h3>01 / Linux Security Lab</h3>
+                <p>
+                    Documenting Linux commands, permissions,
+                    users and security configuration in a
+                    controlled virtual machine.
+                </p>
+                <p><span class="tag">Linux</span>
+                   <span class="tag">Bash</span></p>
+            </div>
+
+            <div class="card">
+                <h3>02 / Network Security</h3>
+                <p>
+                    Learning about IP addresses, ports,
+                    firewall rules, DNS and packet analysis.
+                </p>
+                <p><span class="tag">Networking</span>
+                   <span class="tag">Wireshark</span></p>
+            </div>
+
+            <div class="card">
+                <h3>03 / Python Security Tools</h3>
+                <p>
+                    A collection of small Python scripts
+                    created for learning security concepts
+                    and automating safe tasks.
+                </p>
+                <p><span class="tag">Python</span>
+                   <span class="tag">Automation</span></p>
+            </div>
+        </div>
+
+        <p class="description" style="margin-top: 20px;">
+            Project descriptions are learning goals until
+            the corresponding work is completed. Links to
+            source code and results will be added here.
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact & Links</h2>
+        <p class="description">
+            Explore my repositories to follow my learning
+            journey and see my practical work.
+        </p>
+        <p style="margin-top: 15px;">
+            <a href="https://github.com/FreMi185"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub Profile →
+            </a>
+        </p>
+    </section>
+
+    <footer>
+        <p>Freitas Micael | Cybersecurity Portfolio | 2026</p>
+    </footer>
+
+</body>
+</html>
