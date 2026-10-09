@@ -1,0 +1,250 @@
+/* ==========================================================
+   MICAEL.SEC // THREAT-INTEL WORKSTATION
+   Replace the existing style.css with this file.
+   Distinct visual direction: graphite, amber incident markers,
+   cold cyan telemetry, dossier layouts and forensic gridwork.
+   ========================================================== */
+
+:root {
+  --bg: #090c0f;
+  --surface: #10161b;
+  --surface-raised: #141d23;
+  --text: #e7edf0;
+  --muted: #91a0a8;
+  --dim: #52616a;
+  --line: rgba(153, 183, 194, .17);
+  --amber: #ffb84d;
+  --cyan: #73d9e8;
+  --red: #ff7468;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+html { scroll-behavior: smooth; background: var(--bg); }
+body {
+  color: var(--text);
+  background:
+    radial-gradient(ellipse at 72% 0%, rgba(32, 83, 97, .18), transparent 34rem),
+    radial-gradient(ellipse at 0% 55%, rgba(255, 184, 77, .045), transparent 28rem),
+    var(--bg);
+  overflow-x: hidden;
+}
+
+/* Subtle instrument-panel grid instead of the usual neon gradient. */
+.background-grid {
+  opacity: .28;
+  background-image:
+    linear-gradient(rgba(115,217,232,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(115,217,232,.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 92%);
+}
+.ambient-one {
+  width: 32rem; height: 32rem; left: -25rem; top: 22rem;
+  border: 1px solid rgba(255,184,77,.13);
+  background: radial-gradient(circle, rgba(255,184,77,.06), transparent 68%);
+  border-radius: 50%;
+}
+.ambient-two {
+  width: 36rem; height: 36rem; right: -28rem; top: -12rem;
+  border: 1px solid rgba(115,217,232,.12);
+  background: radial-gradient(circle, rgba(115,217,232,.06), transparent 70%);
+  border-radius: 50%;
+}
+
+/* Header: compact operations console bar. */
+.site-header {
+  background: rgba(9,12,15,.9);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+}
+.brand-mark {
+  color: var(--amber);
+  border: 1px solid rgba(255,184,77,.65);
+  background: linear-gradient(135deg, rgba(255,184,77,.12), rgba(255,184,77,.015));
+  box-shadow: inset 0 0 18px rgba(255,184,77,.04);
+}
+.brand-label { color: var(--text); letter-spacing: .15em; }
+.brand-label span { color: var(--amber); }
+.site-nav a { color: var(--muted); }
+.site-nav a:hover, .site-nav a:focus-visible { color: var(--cyan); }
+.nav-contact { border-color: rgba(255,184,77,.35) !important; }
+.nav-contact span { color: var(--amber); }
+
+/* Hero is a field report: sharp typography and asymmetric console. */
+.hero {
+  position: relative;
+  min-height: min(790px, calc(100vh - 78px));
+  padding-top: clamp(70px, 9vh, 120px);
+}
+.eyebrow, .project-type, .project-status, .log-date, .fact-label, .card-index {
+  color: var(--amber) !important;
+  font-family: var(--mono);
+  letter-spacing: .13em;
+}
+.eyebrow::before {
+  content: "";
+  width: 7px; height: 7px;
+  background: var(--amber);
+  box-shadow: 0 0 0 4px rgba(255,184,77,.09);
+  transform: rotate(45deg);
+}
+.hero h1 {
+  letter-spacing: -.07em;
+  line-height: .98;
+  text-shadow: 0 12px 60px rgba(115,217,232,.035);
+}
+.text-gradient {
+  background: linear-gradient(100deg, #ffd18a 0%, var(--amber) 45%, var(--cyan) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero-copy > p, .section-intro, .about-copy { color: var(--muted); }
+.hero-copy strong { color: var(--text); }
+.hero-meta { color: var(--dim); font-family: var(--mono); }
+.hero-meta span:first-child { color: var(--cyan); }
+.scroll-cue {
+  border-left: 1px solid var(--amber);
+  color: var(--dim);
+  font-family: var(--mono);
+  letter-spacing: .13em;
+}
+
+/* Terminal styled as a live log inspection window. */
+.hero-panel {
+  border: 1px solid rgba(115,217,232,.29);
+  background:
+    linear-gradient(145deg, rgba(18,28,34,.97), rgba(10,15,19,.98));
+  box-shadow: 14px 18px 0 rgba(115,217,232,.025), 0 30px 90px rgba(0,0,0,.32);
+  position: relative;
+}
+.hero-panel::before {
+  content: "LIVE / TELEMETRY";
+  position: absolute;
+  top: -11px; right: 16px;
+  padding: 4px 8px;
+  background: #090c0f;
+  color: var(--cyan);
+  border: 1px solid rgba(115,217,232,.26);
+  font: 9px var(--mono);
+  letter-spacing: .13em;
+}
+.terminal-top { border-bottom-color: var(--line); }
+.terminal-top > span, .terminal-muted, .terminal-bottom { color: var(--dim); }
+.terminal-lights i { background: #35444b; }
+.terminal-lights i:first-child {
+  background: var(--amber);
+  box-shadow: 0 0 9px rgba(255,184,77,.45);
+}
+.terminal-prompt { color: var(--amber); }
+.terminal-path { color: var(--cyan); }
+.terminal-line { color: #cbd7db; }
+.terminal-success { color: var(--cyan); }
+.terminal-success .status-dot {
+  background: var(--cyan);
+  box-shadow: 0 0 12px rgba(115,217,232,.45);
+}
+.terminal-divider { background: var(--line); }
+
+/* Buttons use incident-response amber, not a generic green CTA. */
+.button-primary {
+  color: #12100b !important;
+  background: var(--amber) !important;
+  border-color: var(--amber) !important;
+  box-shadow: 0 8px 30px rgba(255,184,77,.10);
+}
+.button-primary:hover {
+  background: #ffd28b !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(255,184,77,.18);
+}
+.button-quiet, .project-link {
+  color: var(--text);
+  border-color: var(--line) !important;
+  background: rgba(255,255,255,.012);
+}
+.button-quiet:hover, .project-link:hover {
+  color: var(--cyan);
+  border-color: rgba(115,217,232,.5) !important;
+}
+
+/* Section headers, skills and project list feel like a technical dossier. */
+.section-block { border-top-color: var(--line); }
+.section-heading h2, .learning-panel h2, .contact-box h2 {
+  letter-spacing: -.055em;
+}
+.about-photo {
+  border-color: var(--line);
+  background: var(--surface);
+}
+.about-photo img { filter: saturate(.68) contrast(1.08); }
+.about-photo::after {
+  background:
+    linear-gradient(0deg, rgba(9,12,15,.8), transparent 55%),
+    repeating-linear-gradient(0deg, transparent 0 5px, rgba(115,217,232,.035) 6px);
+}
+.photo-tag {
+  color: var(--cyan);
+  border-color: var(--line);
+  background: rgba(9,12,15,.9);
+  font-family: var(--mono);
+}
+.fact, .skill-card, .learning-panel, .contact-box {
+  background: linear-gradient(145deg, rgba(18,27,33,.92), rgba(10,15,19,.9));
+  border-color: var(--line);
+  box-shadow: 0 18px 55px rgba(0,0,0,.10);
+}
+.fact-label { color: var(--dim) !important; }
+.fact-value { color: var(--text); }
+.skill-card { position: relative; overflow: hidden; }
+.skill-card::before {
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+  background: var(--cyan); opacity: .45;
+  transform: scaleY(.35); transform-origin: top;
+  transition: transform .25s ease, opacity .25s ease;
+}
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(115,217,232,.4);
+}
+.skill-card:hover::before { transform: scaleY(1); opacity: 1; }
+.skill-icon { color: var(--cyan); }
+.tag-list span {
+  color: #b7c5cb;
+  border-color: var(--line);
+  background: rgba(115,217,232,.035);
+  font-family: var(--mono);
+}
+.project-card { border-top-color: var(--line); }
+.project-card:last-child { border-bottom-color: var(--line); }
+.project-number { color: var(--amber); font-family: var(--mono); }
+.project-card:hover .project-number { color: var(--cyan); }
+.log-list { border-left-color: rgba(255,184,77,.28); }
+.log-dot { background: var(--amber); box-shadow: 0 0 10px rgba(255,184,77,.2); }
+.log-dot-dim { background: #46545b; }
+.site-footer { border-top-color: var(--line); }
+.back-top:hover { color: var(--cyan); }
+
+/* Small telemetry markers and crisp focus states. */
+a { transition: color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+::selection { color: #080b0e; background: var(--amber); }
+
+@media (max-width: 900px) {
+  .hero { min-height: auto; padding-top: 70px; }
+  .hero-panel { margin-top: 14px; }
+}
+@media (max-width: 680px) {
+  .hero { padding-top: 54px; padding-bottom: 62px; }
+  .hero h1 { font-size: clamp(2.9rem, 14vw, 4.5rem); }
+  .hero-panel::after { display: none; }
+  .section-heading { align-items: start; flex-direction: column; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
