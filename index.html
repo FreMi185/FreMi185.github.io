@@ -4,16 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freitas Micael | Cybersecurity</title>
+
+    <title>Freitas Micael | Cybersecurity Portfolio</title>
 
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
@@ -38,12 +36,12 @@
         }
 
         nav a {
-            color: #d1d5db;
+            color: #e5e7eb;
             text-decoration: none;
             margin-left: 18px;
         }
 
-        nav a:hover {
+        nav a:hover, .links a:hover {
             color: #39ff88;
         }
 
@@ -54,9 +52,22 @@
         .hero {
             min-height: 75vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .profile {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #39ff88;
         }
 
         .label {
@@ -66,7 +77,7 @@
         }
 
         h1 {
-            font-size: clamp(38px, 6vw, 68px);
+            font-size: clamp(36px, 5vw, 60px);
             line-height: 1.2;
             margin: 20px 0;
         }
@@ -83,7 +94,8 @@
         .button {
             display: inline-block;
             margin-top: 25px;
-            padding: 12px 22px;
+            margin-right: 10px;
+            padding: 11px 20px;
             color: #080d0b;
             background: #39ff88;
             text-decoration: none;
@@ -91,8 +103,10 @@
             border-radius: 5px;
         }
 
-        .button:hover {
-            background: #a2ffc5;
+        .button.secondary {
+            color: #39ff88;
+            background: transparent;
+            border: 1px solid #39ff88;
         }
 
         .grid {
@@ -128,8 +142,14 @@
             font-size: 13px;
         }
 
-        a {
+        .card a, .links a {
             color: #39ff88;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 18px;
+            text-decoration: none;
         }
 
         footer {
@@ -139,14 +159,24 @@
             border-top: 1px solid #263b2e;
         }
 
-        @media (max-width: 650px) {
+        @media (max-width: 700px) {
             nav {
                 flex-direction: column;
                 gap: 12px;
             }
 
             nav a {
-                margin: 0 6px;
+                margin: 0 5px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                align-items: flex-start;
+            }
+
+            .profile {
+                width: 180px;
+                height: 180px;
             }
         }
     </style>
@@ -155,7 +185,7 @@
 <body>
 
     <nav>
-        <h2>FreMi185<span class="green">.</span></h2>
+        <h2>FreMi185.</h2>
         <div>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
@@ -165,33 +195,52 @@
     </nav>
 
     <section class="hero">
-        <p class="label">CYBERSECURITY PORTFOLIO</p>
+        <div class="hero-content">
+            <p class="label">CYBERSECURITY PORTFOLIO</p>
 
-        <h1>Freitas Micael<br>
-            <span class="green">Future Cybersecurity Specialist.</span>
-        </h1>
+            <h1>
+                Hi, I'm Freitas Micael.<br>
+                <span class="green">IT Student.</span>
+            </h1>
 
-        <p class="description">
-            IT student in Luxembourg with an interest in
-            cybersecurity, Linux systems, networking and
-            ethical security testing. I am building my skills
-            through practical exercises and personal projects.
-        </p>
+            <p class="description">
+                I am an IT student in Luxembourg interested in
+                cybersecurity, networking, Linux systems and
+                programming. I am developing my skills through
+                school assignments and practical projects.
+            </p>
 
-        <a class="button" href="#projects">
-            Explore My Projects →
-        </a>
+            <a class="button" href="#projects">
+                Explore Projects
+            </a>
+
+            <a class="button secondary"
+               href="https://www.linkedin.com/in/micael-freitas-517a07256/"
+               target="_blank"
+               rel="noopener noreferrer">
+                LinkedIn
+            </a>
+        </div>
+
+        <img class="profile"
+             src="profile.jpg"
+             alt="Portrait of Freitas Micael">
     </section>
 
     <section id="about">
         <h2>About Me</h2>
+
         <p class="description">
-            I am an IT student at Lycée des Arts et Métiers
-            in Luxembourg. I enjoy learning how computer
-            systems and networks work, understanding security
-            risks, and finding ways to protect systems.
-            My goal is to develop practical cybersecurity
-            skills and continue my education in this field.
+            I study IT at Lycée des Arts et Métiers in Luxembourg.
+            I enjoy learning about computer systems, networking,
+            programming and cybersecurity. My goal is to gain
+            practical experience and continue developing my
+            technical knowledge.
+        </p>
+
+        <p class="description" style="margin-top: 15px;">
+            I use GitHub to document my work, share projects
+            and show what I learn along the way.
         </p>
     </section>
 
@@ -217,18 +266,12 @@
 
             <div class="card">
                 <h3>Programming</h3>
-                <span class="tag">Python</span>
-                <span class="tag">PHP</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
                 <span class="tag">JavaScript</span>
+                <span class="tag">PHP</span>
+                <span class="tag">Python</span>
                 <span class="tag">SQL</span>
-            </div>
-
-            <div class="card">
-                <h3>Security</h3>
-                <span class="tag">Security Fundamentals</span>
-                <span class="tag">Access Control</span>
-                <span class="tag">Network Security</span>
-                <span class="tag">Ethical Testing</span>
             </div>
         </div>
     </section>
@@ -238,58 +281,83 @@
 
         <div class="grid">
             <div class="card">
-                <h3>01 / Linux Security Lab</h3>
+                <h3>Webap1 Projekt</h3>
+
                 <p>
-                    Documenting Linux commands, permissions,
-                    users and security configuration in a
-                    controlled virtual machine.
+                    My web development project, created as part
+                    of my IT learning. Visit the repository
+                    to explore the source code and project details.
                 </p>
-                <p><span class="tag">Linux</span>
-                   <span class="tag">Bash</span></p>
+
+                <span class="tag">JavaScript</span>
+                <span class="tag">Web Development</span>
+
+                <a href="https://github.com/FreMi185/Webap1_Projekt"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    View on GitHub →
+                </a>
             </div>
 
             <div class="card">
-                <h3>02 / Network Security</h3>
+                <h3>Linux Security Lab</h3>
+
                 <p>
-                    Learning about IP addresses, ports,
-                    firewall rules, DNS and packet analysis.
+                    Practical exercises involving Linux commands,
+                    permissions, users and system security.
                 </p>
-                <p><span class="tag">Networking</span>
-                   <span class="tag">Wireshark</span></p>
+
+                <span class="tag">Linux</span>
+                <span class="tag">Bash</span>
+
+                <p style="margin-top: 12px;">
+                    <em>More project details coming soon.</em>
+                </p>
             </div>
 
             <div class="card">
-                <h3>03 / Python Security Tools</h3>
+                <h3>Network Security</h3>
+
                 <p>
-                    A collection of small Python scripts
-                    created for learning security concepts
-                    and automating safe tasks.
+                    Learning about IP addressing, DNS, firewalls,
+                    network traffic and defensive security.
                 </p>
-                <p><span class="tag">Python</span>
-                   <span class="tag">Automation</span></p>
+
+                <span class="tag">Networking</span>
+                <span class="tag">Security</span>
+
+                <p style="margin-top: 12px;">
+                    <em>More project details coming soon.</em>
+                </p>
             </div>
         </div>
-
-        <p class="description" style="margin-top: 20px;">
-            Project descriptions are learning goals until
-            the corresponding work is completed. Links to
-            source code and results will be added here.
-        </p>
     </section>
 
     <section id="contact">
-        <h2>Contact & Links</h2>
+        <h2>Contact Me</h2>
+
         <p class="description">
-            Explore my repositories to follow my learning
-            journey and see my practical work.
+            Feel free to explore my work and connect with me
+            through my professional profiles.
         </p>
-        <p style="margin-top: 15px;">
-            <a href="https://github.com/FreMi185"
-               target="_blank"
-               rel="noopener noreferrer">
-                GitHub Profile →
-            </a>
-        </p>
+
+        <div class="links" style="margin-top: 20px;">
+            <p>
+                <a href="https://github.com/FreMi185"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    GitHub Profile
+                </a>
+            </p>
+
+            <p>
+                <a href="https://www.linkedin.com/in/micael-freitas-517a07256/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    LinkedIn Profile
+                </a>
+            </p>
+        </div>
     </section>
 
     <footer>
