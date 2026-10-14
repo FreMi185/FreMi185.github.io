@@ -432,9 +432,25 @@ body::before {
   inset: -45% -30%;
   pointer-events: none;
   content: "";
-  background: linear-gradient(115deg, transparent 38%, rgba(62, 240, 180, .045) 48%, rgba(62, 240, 180, .11) 50%, rgba(62, 240, 180, .045) 52%, transparent 62%);
+  background: linear-gradient(115deg, transparent 38%, rgba(62, 240, 180, .07) 48%, rgba(62, 240, 180, .16) 50%, rgba(62, 240, 180, .07) 52%, transparent 62%);
   transform: translateX(-45%);
   animation: cyber-sweep 14s ease-in-out infinite;
+}
+
+/* Diffused moving light gives the particle field a deeper, cinematic feel. */
+body::after {
+  position: fixed;
+  z-index: 0;
+  inset: -28%;
+  pointer-events: none;
+  content: "";
+  background:
+    radial-gradient(ellipse at 28% 38%, rgba(0, 175, 125, .13), transparent 32%),
+    radial-gradient(ellipse at 73% 58%, rgba(0, 108, 120, .16), transparent 36%),
+    radial-gradient(ellipse at 54% 84%, rgba(52, 220, 158, .08), transparent 29%);
+  filter: blur(22px);
+  transform: translate3d(-3%, -2%, 0) rotate(-5deg);
+  animation: aurora-drift 22s ease-in-out infinite alternate;
 }
 
 /* Keep the decorative sweep and network behind all readable content. */
@@ -446,6 +462,11 @@ body::before {
   88%, 100% { transform: translateX(45%); }
 }
 
+@keyframes aurora-drift {
+  from { transform: translate3d(-3%, -2%, 0) rotate(-5deg) scale(1); }
+  to { transform: translate3d(3%, 3%, 0) rotate(5deg) scale(1.08); }
+}
+
 @media (max-width: 680px) {
   .site-header { min-height: 66px; padding-inline: 17px; }
   .site-nav { position: absolute; flex-direction: column; }
@@ -454,5 +475,5 @@ body::before {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body::before { animation: none; }
+  body::before, body::after { animation: none; }
 }
