@@ -488,3 +488,15 @@ body::after {
 @media (prefers-reduced-motion: reduce) {
   body::before, body::after { animation: none; }
 }
+
+/* Prevent the oversized hero title from clipping on narrow screens. */
+.hero-copy { min-width: 0; }
+.hero h1 { max-width: 100%; overflow-wrap: break-word; }
+
+@media (max-width: 680px) {
+  .hero h1 {
+    font-size: clamp(2.35rem, 10.2vw, 3.45rem);
+    line-height: 1.08;
+    letter-spacing: -.06em;
+  }
+}
