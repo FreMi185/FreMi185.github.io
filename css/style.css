@@ -350,7 +350,7 @@ button { color: inherit; font: inherit; }
   opacity: .72;
 }
 
-body > :not(.network-canvas):not(.background-grid):not(.ambient) { position: relative; z-index: 1; }
+main, .site-footer { position: relative; z-index: 1; }
 
 body {
   background:
