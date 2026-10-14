@@ -395,3 +395,64 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .background-grid, .ambient-one, .ambient-two { animation: none; }
 }
+
+/* Keep navigation in a top bar on desktop and mobile. */
+.site-header {
+  position: sticky;
+  inset: 0 0 auto;
+  width: 100%;
+  min-height: 74px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 max(25px, calc((100vw - var(--page)) / 2));
+  border-right: 0;
+  border-bottom: 1px solid var(--stroke);
+  background: rgba(5, 11, 13, .88);
+  backdrop-filter: blur(16px);
+}
+
+.site-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(17px, 2.6vw, 32px);
+}
+
+.site-nav a { padding: 8px 0; }
+.site-nav .nav-contact { margin-top: 0; padding: 8px 12px; }
+main, .site-footer { width: min(var(--page), calc(100% - 50px)); margin-inline: auto; }
+.hero { min-height: min(760px, calc(100svh - 74px)); }
+
+/* A slow diagonal light sweep makes the background motion easy to notice. */
+body::before {
+  position: fixed;
+  z-index: 0;
+  inset: -45% -30%;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(115deg, transparent 38%, rgba(62, 240, 180, .045) 48%, rgba(62, 240, 180, .11) 50%, rgba(62, 240, 180, .045) 52%, transparent 62%);
+  transform: translateX(-45%);
+  animation: cyber-sweep 14s ease-in-out infinite;
+}
+
+/* Keep the decorative sweep and network behind all readable content. */
+.site-header, main, .site-footer { position: relative; z-index: 1; }
+.site-header { position: sticky; }
+
+@keyframes cyber-sweep {
+  0%, 12% { transform: translateX(-45%); }
+  88%, 100% { transform: translateX(45%); }
+}
+
+@media (max-width: 680px) {
+  .site-header { min-height: 66px; padding-inline: 17px; }
+  .site-nav { position: absolute; flex-direction: column; }
+  .site-nav a { padding: 11px 4px; }
+  .site-nav .nav-contact { margin-top: 8px; padding: 9px 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before { animation: none; }
+}
