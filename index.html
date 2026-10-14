@@ -13,10 +13,12 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- Decorative background layers are hidden from assistive technology. -->
   <div class="background-grid" aria-hidden="true"></div>
   <div class="ambient ambient-one" aria-hidden="true"></div>
   <div class="ambient ambient-two" aria-hidden="true"></div>
 
+  <!-- Site-wide brand and responsive navigation. -->
   <header class="site-header">
     <a class="brand" href="#home" aria-label="Micael Freitas home">
       <span class="brand-mark">MF<span>_</span></span>
@@ -38,6 +40,7 @@
   </header>
 
   <main id="main">
+    <!-- Introductory hero and terminal-style summary. -->
     <section class="hero section-wrap" id="home">
       <div class="hero-copy reveal">
         <p class="eyebrow"><span class="status-dot"></span> IT STUDENT · CYBERSECURITY IN TRAINING</p>
@@ -75,6 +78,7 @@
       <a class="scroll-cue" href="#about"><span></span> SCROLL TO EXPLORE</a>
     </section>
 
+    <!-- Background, experience, and learning goals. -->
     <section class="section-wrap section-block" id="about">
       <div class="section-heading reveal">
         <p class="eyebrow">01 / ABOUT ME</p>
@@ -83,7 +87,7 @@
       <div class="about-layout">
         <div class="about-photo reveal">
           <!-- Put your own photo at assets/profile.jpg. If you do not want a photo, remove this block. -->
-          <img src="assets/profile.jpg" alt="Portrait of Micael Freitas" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'">
+          <img src="assets/profile.jpg" alt="Portrait of Micael Freitas">
           <div class="photo-fallback" aria-hidden="true"><span>MF<span>_</span></span><small>YOUR PHOTO<br>GOES HERE</small></div>
           <div class="photo-tag"><span class="status-dot"></span> STUDENT PROFILE</div>
         </div>
@@ -100,6 +104,7 @@
       </div>
     </section>
 
+    <!-- Technical skills and tools currently in practice. -->
     <section class="section-wrap section-block" id="skills">
       <div class="section-heading reveal">
         <p class="eyebrow">02 / SKILL SET</p>
@@ -114,6 +119,7 @@
       </div>
     </section>
 
+    <!-- Selected project with a link to its repository. -->
     <section class="section-wrap section-block" id="projects">
       <div class="section-heading project-heading reveal">
         <div><p class="eyebrow">03 / SELECTED WORK</p><h2>Projects & <span class="text-muted">practice.</span></h2></div>
@@ -128,6 +134,7 @@
       </div>
     </section>
 
+    <!-- Education and work experience, shown as a timeline. -->
     <section class="section-wrap section-block" id="learning">
       <div class="learning-panel reveal">
         <div><p class="eyebrow">04 / EXPERIENCE & EDUCATION</p><h2>Experience that<br><span class="text-muted">built my foundation.</span></h2><p>My path combines hands-on IT support experience with formal studies in IT and cybersecurity.</p></div>
@@ -141,6 +148,7 @@
       </div>
     </section>
 
+    <!-- Professional contact links. -->
     <section class="section-wrap section-block contact-section" id="contact">
       <div class="contact-box reveal">
         <p class="eyebrow">05 / CONTACT</p>
@@ -154,6 +162,7 @@
     </section>
   </main>
 
+  <!-- Shared links and copyright information. -->
   <footer class="site-footer section-wrap">
     <a class="brand brand-small" href="#home"><span class="brand-mark">MF<span>_</span></span><span class="brand-label">MICAEL<span>.SEC</span></span></a>
     <p>Built for learning. Shared with care.</p>

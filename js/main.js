@@ -4,6 +4,7 @@
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector("#site-nav");
 
+/* Mobile navigation: toggle the menu and close it after a selection. */
 if (menuButton && navigation) {
   menuButton.addEventListener("click", () => {
     const isOpen = menuButton.getAttribute("aria-expanded") === "true";
@@ -30,7 +31,19 @@ if (menuButton && navigation) {
   });
 }
 
-/* Fade sections in as they enter the viewport. */
+/* Image fallback: show the initials card when no profile image is available. */
+document.querySelectorAll(".about-photo img").forEach((image) => {
+  const showFallback = () => {
+    image.hidden = true;
+    const fallback = image.nextElementSibling;
+    if (fallback) fallback.style.display = "grid";
+  };
+
+  image.addEventListener("error", showFallback, { once: true });
+  if (image.complete && image.naturalWidth === 0) showFallback();
+});
+
+/* Reveal content as it enters the viewport; skip animation when requested. */
 const revealItems = document.querySelectorAll(".reveal");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -49,13 +62,13 @@ if ("IntersectionObserver" in window && !reduceMotion) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
 
-/* Keep the footer year current without any external service. */
+/* Keep the footer year current using the visitor's local date. */
 const year = document.querySelector("#year");
 if (year) {
   year.textContent = String(new Date().getFullYear());
 }
 
-/* Draw a lightweight network of moving nodes behind the portfolio content. */
+/* Animated background: draw a lightweight network behind the page content. */
 const motionCanvas = document.createElement("canvas");
 motionCanvas.className = "network-canvas";
 motionCanvas.setAttribute("aria-hidden", "true");
@@ -68,6 +81,7 @@ let animationFrame = 0;
 let canvasWidth = 0;
 let canvasHeight = 0;
 
+/* Resize for the current viewport and create a fresh set of network nodes. */
 function sizeNetworkCanvas() {
   const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
   canvasWidth = window.innerWidth;
@@ -88,6 +102,7 @@ function sizeNetworkCanvas() {
   }));
 }
 
+/* Move each node, connect close neighbors, and render the next frame. */
 function drawNetwork() {
   if (!motionContext) return;
   motionContext.clearRect(0, 0, canvasWidth, canvasHeight);
@@ -121,6 +136,7 @@ function drawNetwork() {
   animationFrame = window.requestAnimationFrame(drawNetwork);
 }
 
+/* Restart animation cleanly after viewport or motion preference changes. */
 function startNetwork() {
   window.cancelAnimationFrame(animationFrame);
   sizeNetworkCanvas();
