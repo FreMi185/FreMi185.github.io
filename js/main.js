@@ -106,7 +106,7 @@ function drawNetwork() {
         motionContext.beginPath();
         motionContext.moveTo(node.x, node.y);
         motionContext.lineTo(other.x, other.y);
-        motionContext.strokeStyle = `rgba(48, 230, 180, ${(1 - distance / linkDistance) * 0.16})`;
+        motionContext.strokeStyle = `rgba(87, 164, 255, ${(1 - distance / linkDistance) * 0.2})`;
         motionContext.lineWidth = 0.7;
         motionContext.stroke();
       }
@@ -114,7 +114,7 @@ function drawNetwork() {
 
     motionContext.beginPath();
     motionContext.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-    motionContext.fillStyle = "rgba(95, 255, 204, 0.48)";
+    motionContext.fillStyle = "rgba(135, 199, 255, 0.62)";
     motionContext.fill();
   });
 

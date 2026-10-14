@@ -328,16 +328,16 @@ button { color: inherit; font: inherit; }
 
 /* Cybersecurity palette: deep navy surfaces, green signals, and restrained glow. */
 :root {
-  --black: #050b0d;
-  --surface: #0a1417;
-  --surface-2: #0e1d20;
-  --white: #e9fff7;
-  --gray: #9bb9b0;
-  --gray-low: #668078;
-  --stroke: rgba(119, 220, 185, .15);
-  --blue: #22c997;
-  --blue-bright: #72ffd0;
-  --blue-wash: rgba(34, 201, 151, .1);
+  --black: #050912;
+  --surface: #0a1220;
+  --surface-2: #101d30;
+  --white: #edf5ff;
+  --gray: #a5b5cb;
+  --gray-low: #71839e;
+  --stroke: rgba(105, 163, 240, .18);
+  --blue: #397df5;
+  --blue-bright: #83c5ff;
+  --blue-wash: rgba(57, 125, 245, .12);
 }
 
 /* The canvas is decorative and never intercepts links or other input. */
@@ -354,39 +354,50 @@ main, .site-footer { position: relative; z-index: 1; }
 
 body {
   background:
-    radial-gradient(ellipse at 76% 8%, rgba(18, 119, 91, .16), transparent 38rem),
+    radial-gradient(ellipse at 76% 8%, rgba(30, 94, 180, .2), transparent 38rem),
     linear-gradient(180deg, rgba(4, 12, 14, .82), rgba(5, 11, 13, .97)),
     var(--black);
+}
+
+/* Use the uploaded looping GIF as the page-wide animated background. */
+body {
+  background-image:
+    linear-gradient(rgba(5, 11, 13, .38), rgba(5, 11, 13, .52)),
+    url("../assets/giphy-2.gif");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .background-grid {
   z-index: -1;
   opacity: .19;
   background-image:
-    linear-gradient(rgba(65, 206, 160, .075) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(65, 206, 160, .075) 1px, transparent 1px);
+    linear-gradient(rgba(80, 153, 255, .075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(80, 153, 255, .075) 1px, transparent 1px);
   background-size: 54px 54px;
   mask-image: linear-gradient(#000 0%, transparent 90%);
   animation: grid-drift 32s linear infinite;
 }
 
-.ambient-one { border-color: rgba(65, 230, 171, .18); background: radial-gradient(circle, rgba(25, 195, 139, .11), transparent 70%); animation: ambient-float 18s ease-in-out infinite alternate; }
-.ambient-two { border-color: rgba(65, 230, 171, .12); background: radial-gradient(circle, rgba(25, 195, 139, .09), transparent 70%); animation: ambient-float 23s ease-in-out infinite alternate-reverse; }
+.ambient-one { border-color: rgba(79, 155, 255, .2); background: radial-gradient(circle, rgba(25, 104, 226, .15), transparent 70%); animation: ambient-float 18s ease-in-out infinite alternate; }
+.ambient-two { border-color: rgba(65, 163, 255, .15); background: radial-gradient(circle, rgba(25, 104, 226, .12), transparent 70%); animation: ambient-float 23s ease-in-out infinite alternate-reverse; }
 
-.site-header { border-color: rgba(119, 220, 185, .13); background: rgba(5, 11, 13, .84); }
-.brand-mark { box-shadow: inset 0 0 18px rgba(34, 201, 151, .08), 0 0 18px rgba(34, 201, 151, .08); }
-.hero h1 { text-shadow: 0 0 36px rgba(34, 201, 151, .1); }
-.text-gradient { background-image: linear-gradient(100deg, #c1ffe9, #48e8b1 62%, #72ffd0); }
-.button-primary { box-shadow: 0 0 24px rgba(34, 201, 151, .16); }
-.button-primary:hover { box-shadow: 0 0 30px rgba(34, 201, 151, .34); }
-.hero-panel { border-color: rgba(91, 231, 177, .26); background: rgba(6, 17, 18, .94); box-shadow: 0 25px 90px rgba(0, 0, 0, .46), 0 0 50px rgba(15, 130, 94, .08); }
-.terminal-top { border-bottom-color: rgba(119, 220, 185, .15); background: rgba(10, 26, 25, .94); }
-.terminal-lights i:first-child { background: var(--blue); box-shadow: 0 0 9px rgba(34, 201, 151, .7); }
-.terminal-success { color: #9bffdc; }
-.skill-card, .learning-panel, .contact-box { background: linear-gradient(145deg, rgba(11, 29, 29, .92), rgba(6, 17, 19, .96)); }
-.skill-card:hover { box-shadow: 0 14px 38px rgba(0, 0, 0, .24), 0 0 26px rgba(34, 201, 151, .07); }
-.tag-list span { background: rgba(34, 201, 151, .055); }
-.contact-box { background: radial-gradient(ellipse at 100% 40%, rgba(34, 201, 151, .13), transparent 55%), var(--surface); }
+.site-header { border-color: rgba(105, 163, 240, .16); background: rgba(5, 9, 18, .86); }
+.brand-mark { box-shadow: inset 0 0 18px rgba(57, 125, 245, .1), 0 0 18px rgba(57, 125, 245, .1); }
+.hero h1 { text-shadow: 0 0 36px rgba(57, 125, 245, .12); }
+.text-gradient { background-image: linear-gradient(100deg, #e4f3ff, #66aaff 62%, #83c5ff); }
+.button-primary { box-shadow: 0 0 24px rgba(57, 125, 245, .2); }
+.button-primary:hover { box-shadow: 0 0 30px rgba(57, 125, 245, .38); }
+.hero-panel { border-color: rgba(91, 157, 255, .3); background: rgba(6, 13, 25, .94); box-shadow: 0 25px 90px rgba(0, 0, 0, .46), 0 0 50px rgba(15, 77, 160, .12); }
+.terminal-top { border-bottom-color: rgba(105, 163, 240, .17); background: rgba(10, 20, 37, .94); }
+.terminal-lights i:first-child { background: var(--blue); box-shadow: 0 0 9px rgba(57, 125, 245, .75); }
+.terminal-success { color: #a8d9ff; }
+.skill-card, .learning-panel, .contact-box { background: linear-gradient(145deg, rgba(11, 22, 40, .93), rgba(6, 12, 24, .96)); }
+.skill-card:hover { box-shadow: 0 14px 38px rgba(0, 0, 0, .24), 0 0 26px rgba(57, 125, 245, .1); }
+.tag-list span { background: rgba(57, 125, 245, .07); }
+.contact-box { background: radial-gradient(ellipse at 100% 40%, rgba(57, 125, 245, .16), transparent 55%), var(--surface); }
 
 /* Soft entrance motion keeps the page lively without distracting from reading. */
 @keyframes grid-drift { to { background-position: 54px 54px; } }
@@ -432,7 +443,7 @@ body::before {
   inset: -45% -30%;
   pointer-events: none;
   content: "";
-  background: linear-gradient(115deg, transparent 38%, rgba(62, 240, 180, .07) 48%, rgba(62, 240, 180, .16) 50%, rgba(62, 240, 180, .07) 52%, transparent 62%);
+  background: linear-gradient(115deg, transparent 38%, rgba(87, 164, 255, .08) 48%, rgba(87, 164, 255, .18) 50%, rgba(87, 164, 255, .08) 52%, transparent 62%);
   transform: translateX(-45%);
   animation: cyber-sweep 14s ease-in-out infinite;
 }
@@ -445,9 +456,9 @@ body::after {
   pointer-events: none;
   content: "";
   background:
-    radial-gradient(ellipse at 28% 38%, rgba(0, 175, 125, .13), transparent 32%),
-    radial-gradient(ellipse at 73% 58%, rgba(0, 108, 120, .16), transparent 36%),
-    radial-gradient(ellipse at 54% 84%, rgba(52, 220, 158, .08), transparent 29%);
+    radial-gradient(ellipse at 28% 38%, rgba(31, 112, 244, .15), transparent 32%),
+    radial-gradient(ellipse at 73% 58%, rgba(0, 125, 190, .18), transparent 36%),
+    radial-gradient(ellipse at 54% 84%, rgba(82, 178, 255, .1), transparent 29%);
   filter: blur(22px);
   transform: translate3d(-3%, -2%, 0) rotate(-5deg);
   animation: aurora-drift 22s ease-in-out infinite alternate;
