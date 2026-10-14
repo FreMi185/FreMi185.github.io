@@ -439,7 +439,7 @@ body::before {
 
 /* Keep the decorative sweep and network behind all readable content. */
 .site-header, main, .site-footer { position: relative; z-index: 1; }
-.site-header { position: sticky; }
+.site-header { position: sticky; z-index: 20; }
 
 @keyframes cyber-sweep {
   0%, 12% { transform: translateX(-45%); }
